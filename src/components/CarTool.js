@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ToolHeader } from './ToolHeader';
 import { CarTable } from './CarTable';
 import { CarForm } from './CarForm';
+import { Search } from './Search';
 
 export const CarTool = ({ cars }) => {
 
@@ -46,6 +47,7 @@ export const CarTool = ({ cars }) => {
   };
 
   return <>
+    <Search cars={state.cars}/>
     <ToolHeader headerText="Car Tool"/>
     <CarTable cars={state.cars} deleteCar={deleteCar} updateCar={updateCar} toggleEdit={toggleEdit} editCarId={state.editCarId}/>
     <CarForm buttonText="Add Car" onAddCar={addCar}/>
